@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trả lời lý thuyết | Đề thi Kết thúc HP</title>
+<style>
+
+:root{--ink:#112341;--muted:#536480;--blue:#275fca;--dark:#0c2143;--pale:#f0f5ff;--line:#dbe4f3;--white:#fff;--good:#147154;--bad:#b82e42;--shadow:0 14px 38px rgba(27,54,110,.10)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:system-ui,-apple-system,'Segoe UI',Arial,sans-serif;line-height:1.55;color:var(--ink);background:#f6f8fc}
+a{color:#1f55c0}
+.topbar{background:#0c2143;color:#fff;border-bottom:3px solid #4c85f5}
+.top-inner{max-width:1140px;margin:auto;padding:16px 20px}
+.brand{font-size:18px;font-weight:800;color:#fff;text-decoration:none;display:inline-block;margin-bottom:12px;letter-spacing:.2px}
+nav{display:flex;gap:7px;flex-wrap:wrap}
+nav a{padding:7px 10px;color:#dae7ff;text-decoration:none;border:1px solid #3f5376;border-radius:9px;font-size:13px;transition:.2s}
+nav a:hover,nav a:focus-visible,nav a[aria-current=page]{background:#fff;color:var(--dark);outline-offset:2px}
+main{max-width:1140px;margin:0 auto;padding:32px 20px 68px}
+.hero{background:linear-gradient(125deg,#14376c,#2e66ca);border-radius:22px;color:#fff;padding:36px;box-shadow:var(--shadow);margin-bottom:24px}
+.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:1.5px;font-weight:800;opacity:.87}
+.hero h1{font-size:clamp(26px,3.8vw,40px);line-height:1.2;margin:10px 0}
+.hero p{margin:0;color:#e2ebff;max-width:760px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 8px 22px rgba(30,59,105,.055);padding:24px;margin-bottom:22px}
+.panel h2{font-size:21px;margin:0 0 14px}
+.panel h3{font-size:17px;margin:20px 0 8px}
+.panel p:last-child{margin-bottom:0}
+.grid{display:flex;flex-wrap:wrap;gap:16px}
+.tile{background:white;border:1px solid var(--line);border-radius:16px;box-shadow:0 7px 24px rgba(30,59,105,.06);padding:20px;flex:1 1 270px;min-width:0}
+.tile h2{font-size:19px;margin:0 0 6px}
+.tile p{margin:0 0 14px;color:var(--muted)}
+.btn,button{font:inherit}
+.btn,button.primary{display:inline-block;background:var(--blue);color:#fff;border:0;border-radius:10px;text-decoration:none;padding:10px 16px;font-weight:700;cursor:pointer}
+.btn:hover,button.primary:hover{background:#184aa9}
+.btn:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #a0befd;outline-offset:2px}
+button.secondary{background:#fff;border:1px solid #9ab4e9;color:#1d4da8;border-radius:10px;padding:10px 15px;cursor:pointer}
+.note{padding:13px 15px;background:#eff5ff;border-left:4px solid #4b7edb;border-radius:9px;margin:18px 0;color:#29446f}
+.warning{padding:13px 15px;background:#fff3f2;border-left:4px solid #dd5971;border-radius:9px;margin:18px 0;color:#7b2334}
+.footer{padding:25px 20px;text-align:center;color:#64738d;font-size:13px;border-top:1px solid var(--line)}
+code{background:#f0f4fb;padding:1px 4px;border-radius:4px}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#0d213e;color:#e9f0ff;padding:15px;border-radius:12px;line-height:1.45;font-size:13px}
+pre code{background:transparent;padding:0}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;border:1px solid var(--line);padding:10px;vertical-align:top}
+th{background:#ebf2ff}
+small,.muted{color:var(--muted)}
+@media(max-width:640px){main{padding:20px 13px 50px}.top-inner{padding:14px}.hero{padding:25px 18px;border-radius:14px}.panel{padding:17px}.tile{flex-basis:100%}nav a{font-size:12px;padding:7px 8px}}
+
+
+</style>
+</head>
+<body>
+<header class="topbar"><div class="top-inner"><a class="brand" href="index.html">🎓 Đề thi Kết thúc Học phần · Web</a><nav aria-label="Menu chính"><a href="index.html">Trang chủ</a><a href="bai1-sanpham.html">Bài 1 · Sản phẩm</a><a href="bai2-dangky.html">Bài 2 · Đăng ký</a><a href="bai3-demnguoc.html">Bài 3 · Đếm ngược</a><a href="lythuyet.html" aria-current="page">Trả lời lý thuyết</a><a href="baitap23.html">Bài tập 23</a><a href="baitap22.html">Bài tập 22</a><a href="diem-danh.html">Điểm danh</a></nav></div></header>
+<main>
+
+<section class="hero"><div class="eyebrow">Phần 1 · 40 điểm</div><h1>Trả lời 4 câu lý thuyết</h1><p>Khái niệm, điểm khác biệt, ví dụ mã nguồn, ứng dụng và lưu ý bảo mật theo yêu cầu của đề.</p></section>
+<section class="panel"><h2>Câu 1 (10 điểm) · position: relative và absolute</h2>
+<p><strong>Relative:</strong> Phần tử vẫn giữ chỗ trong luồng bố cục bình thường; các thuộc tính top/right/bottom/left dịch chuyển nó so với vị trí ban đầu. Nó cũng có thể làm mốc định vị cho phần tử con.</p>
+<p><strong>Absolute:</strong> Phần tử ra khỏi luồng bố cục; vị trí được tính dựa trên khối chứa, thường là tổ tiên gần nhất có <code>position</code> khác <code>static</code>. Không có tổ tiên phù hợp thì khối chứa ban đầu được dùng.</p>
+<table><tr><th>Relative</th><th>Absolute</th></tr><tr><td>Giữ khoảng trống ban đầu trong bố cục</td><td>Không giữ chỗ trong luồng bình thường</td></tr><tr><td>Thích hợp chỉnh lệch nhẹ, làm mốc cho con</td><td>Thích hợp nhãn giá, biểu tượng đè lên ảnh</td></tr></table>
+<pre><code>.khung { position: relative; width: 80%; max-width: 500px; }
+.nhan { position: absolute; top: 8px; right: 8px; }
+@media (max-width: 600px) { .khung { width: 100%; } }</code></pre>
+<p><strong>Responsive:</strong> Không nên dựa vào tọa độ cố định cho cả trang vì dễ tràn và chồng lấn trên mobile. Kết hợp phần trăm, <code>max-width</code>, media queries và bố cục linh hoạt. Sau khi deploy, CSS vẫn chạy như lúc phát triển nhưng phải kiểm tra nhiều kích cỡ màn hình bằng DevTools.</p></section>
+<section class="panel"><h2>Câu 2 (10 điểm) · Domain, Hosting, DNS và deploy</h2>
+<p><strong>Quy trình:</strong> (1) Chọn và đăng ký tên miền; (2) chuẩn bị hosting hoặc nền tảng tĩnh; (3) tải bộ file HTML/CSS/JS lên dịch vụ; (4) cấu hình các bản ghi DNS do nhà cung cấp hướng dẫn; (5) bật HTTPS/SSL; (6) kiểm tra tên miền, link và giao diện.</p>
+<p><strong>DNS:</strong> Hệ thống phân giải tên miền thành thông tin định tuyến. Bản ghi <code>A</code> trỏ đến IPv4; <code>CNAME</code> là bí danh trỏ đến tên miền khác. Việc thay đổi DNS có thể cần thời gian để cập nhật ở các bộ nhớ đệm.</p>
+<p><strong>Giải pháp không tự quản trị server:</strong> GitHub Pages và Netlify đều cho phép triển khai website tĩnh HTML, CSS, JavaScript. Có thể nối repository Git để cập nhật tự động (tùy nền tảng và thiết lập). Không nên coi hosting tĩnh là backend có cơ sở dữ liệu.</p>
+<p><strong>Rủi ro:</strong> Thiếu HTTPS làm giảm bảo mật đường truyền; lộ khóa API hoặc mật khẩu trong JavaScript; sai quyền truy cập và lỗi XSS. Cách phòng tránh gồm bật HTTPS, không nhúng bí mật vào frontend, kiểm soát dữ liệu đầu vào và bảo vệ tài khoản quản trị.</p></section>
+<section class="panel"><h2>Câu 3 (10 điểm) · var, let, const; Scope và Hoisting</h2>
+<table><tr><th>Tiêu chí</th><th>var</th><th>let</th><th>const</th></tr><tr><td>Phạm vi</td><td>Hàm</td><td>Khối</td><td>Khối</td></tr><tr><td>Gán lại</td><td>Có</td><td>Có</td><td>Không</td></tr><tr><td>Khai báo lại cùng phạm vi</td><td>Có</td><td>Không</td><td>Không</td></tr><tr><td>Hoisting</td><td>Ban đầu undefined</td><td>Có TDZ</td><td>Có TDZ</td></tr></table>
+<p><strong>TDZ</strong> (Temporal Dead Zone) là khoảng thời gian không được truy cập biến trước khi dòng khởi tạo được thực thi. Với <code>const</code>, không thể gán lại biến, nhưng thuộc tính trong object vẫn có thể sửa nếu object không bị đóng băng.</p>
+<pre><code>console.log(a); // undefined
+var a = 10;
+
+// console.log(b); // ReferenceError vì TDZ
+let b = 20;
+const c = 30;</code></pre>
+<p><strong>Lỗi thường gặp:</strong> Đọc <code>let/const</code> trước khởi tạo gây <code>ReferenceError</code>; sửa giá trị gán cho <code>const</code> gây <code>TypeError</code>. Để debug, mở Chrome DevTools bằng F12, xem tab Console, thêm breakpoint ở Sources và quan sát Scope/Watch hoặc sử dụng <code>console.log()</code>.</p><p><strong>Khuyến nghị:</strong> Ưu tiên <code>const</code> khi không cần gán lại; dùng <code>let</code> khi cần cập nhật; tránh <code>var</code> trong mã mới.</p></section>
+<section class="panel"><h2>Câu 4 (10 điểm) · Event Delegation</h2>
+<p><strong>Khái niệm:</strong> Đăng ký trình lắng nghe sự kiện ở phần tử cha để xử lý tương tác của nhiều phần tử con. Với sự kiện click, cơ chế event bubbling cho phép sự kiện nổi từ con lên cha.</p>
+<p><strong>Ví dụ:</strong> Một danh sách <code>&lt;ul id="list"&gt;</code> có nhiều <code>&lt;li&gt;</code>; mỗi li chứa nút <code>&lt;button class="xoa"&gt;Xóa&lt;/button&gt;</code>. Chỉ cần lắng nghe click ở ul.</p>
+<pre><code>const list = document.getElementById(&quot;list&quot;);
+list.addEventListener(&quot;click&quot;, (event) =&gt; {
+  const btn = event.target.closest(&quot;button.xoa&quot;);
+  if (btn &amp;&amp; list.contains(btn)) {
+    btn.closest(&quot;li&quot;)?.remove();
+  }
+});</code></pre>
+<p><strong>Ý nghĩa:</strong> Dùng <code>closest()</code> để nhận nút được nhấn và kiểm tra nó thuộc danh sách. Khi có sản phẩm được thêm bằng JavaScript, sự kiện vẫn hoạt động mà không cần đăng ký listener mới.</p>
+<p><strong>Lợi ích:</strong> Giảm lượng listener, dễ bảo trì và hoạt động với danh sách động. HTML tạo cấu trúc, CSS định dạng, JavaScript xử lý các sự kiện; cần chú ý loại sự kiện có bubbling và không xử lý nhầm phần tử ngoài vùng cần quản lý.</p></section>
+
+</main>
+<footer class="footer">Bài thực hành HTML · CSS · JavaScript — Chạy trực tiếp trên trình duyệt</footer>
+</body>
+</html>

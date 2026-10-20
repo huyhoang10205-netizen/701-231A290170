@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="vi">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Đèn kéo quân 3D | Bài tập 23</title>
+<style>
+
+:root{--bg:#09192e;--bg2:#0e2949;--ink:#f6f8ff;--muted:#b0c4df;--gold:#ffcc78;--paper:#152e4d;--line:#35506d}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;background:radial-gradient(circle at 80% 0,#224668 0,transparent 42%),linear-gradient(145deg,#081b30,#122b4b 67%,#102038);color:var(--ink);font:16px/1.65 system-ui,-apple-system,'Segoe UI',Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+button,a{touch-action:manipulation}
+a:focus-visible,button:focus-visible{outline:3px solid #ffcf7c;outline-offset:3px}
+.container{max-width:1100px;margin:auto;padding-left:22px;padding-right:22px}
+.exam-back{display:block;text-align:center;padding:9px;background:#e4eefc;color:#18365b;font-size:13px;font-weight:800}
+.exam-back:hover{background:#fff}
+.site-header{border-bottom:1px solid rgba(255,255,255,.15);background:rgba(7,22,43,.56)}
+.header-inner{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:20px;padding-bottom:20px}
+.brand{font-size:18px;font-weight:900;letter-spacing:.09em}
+.brand-mark,.accent{color:var(--gold)}
+.site-nav{display:flex;gap:8px;flex-wrap:wrap}
+.site-nav a{padding:8px 12px;border-radius:10px;font-weight:600;font-size:14px;color:#d8e6fb}
+.site-nav a:hover,.site-nav a.active{background:#274766;color:white}
+.hero{margin-top:50px;padding-top:42px;padding-bottom:48px}
+.eyebrow,.lesson-kicker{font-size:13px;font-weight:800;letter-spacing:.17em;color:var(--gold)}
+h1{font-size:clamp(34px,5.4vw,62px);line-height:1.17;margin:12px 0 22px;letter-spacing:-.04em}
+.hero-lead{max-width:760px;font-size:18px;color:var(--muted)}
+.student-card,.student-line{padding:15px 18px;background:#ffffff11;border:1px solid #ffffff24;border-radius:12px;display:flex;gap:20px;flex-wrap:wrap;width:fit-content;margin:24px 0}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:12px;padding:11px 19px;font-weight:800;border:1px solid #7085a1;cursor:pointer;font:inherit}
+.btn-primary{color:#1e2940;background:var(--gold);border-color:var(--gold)}
+.btn-secondary{background:transparent;color:white}
+.btn:hover{filter:brightness(1.13)}
+.cards-section{padding-top:5px;padding-bottom:66px}
+.cards-section h2{font-size:25px}
+.lesson-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.lesson-card{overflow:hidden;border:1px solid var(--line);border-radius:18px;background:#142e4d}
+.lesson-visual{height:176px;background:radial-gradient(circle at 48% 46%,#3e718f,#173754);display:flex;align-items:center;justify-content:center;gap:12px;position:relative;color:var(--gold)}
+.lesson-visual--23{background:radial-gradient(circle at 50% 50%,#744329,#173754)}
+.giant-index{font-size:104px;font-weight:900;opacity:.72}
+.ornament{font-size:95px;line-height:1}
+.mini-stars{position:absolute;top:23px;right:26px;letter-spacing:8px}
+.lesson-content{padding:24px}
+.lesson-kicker{margin:0}
+.lesson-content h3{font-size:22px;margin:5px 0 8px}
+.lesson-content p:not(.lesson-kicker){color:var(--muted);margin:0 0 18px}
+.text-link{font-weight:800;color:var(--gold)}
+.result-page{padding-top:55px;padding-bottom:85px}
+.result-page h1{font-size:clamp(32px,4.3vw,49px)}
+.result-frame{margin:26px 0 28px;border:2px dashed #496889;border-radius:20px;min-height:270px;overflow:hidden;background:#0d253f}
+.result-frame img{max-width:100%;height:auto;display:block;margin:auto}
+.result-placeholder{text-align:center;padding:44px 24px}
+.placeholder-icon{font-size:64px;color:var(--gold)}
+.result-placeholder h2{font-size:23px;margin:6px 0}
+.result-placeholder p{max-width:610px;margin:auto;color:#c6d3e6}
+.result-placeholder code{color:var(--gold)}
+.student-sep{color:var(--gold)}
+.site-footer{padding-top:26px;padding-bottom:34px;text-align:center;color:#a9bbd1;border-top:1px solid #415575}
+[hidden]{display:none!important}
+@media(max-width:670px){.header-inner{display:block}.brand{display:block;margin-bottom:12px}.site-nav{gap:4px}.site-nav a{padding:7px 9px;font-size:12px}.hero{margin-top:10px;padding-top:22px}.lesson-grid{grid-template-columns:1fr}.student-card,.student-line{display:block}.student-card span{display:block}.container{padding-left:15px;padding-right:15px}}
+
+.lamp-page{max-width:1020px;margin:34px auto 60px;padding:0 20px;text-align:center}
+.lamp-page h1{font-size:clamp(31px,4.5vw,49px)}
+.lamp-page .lead{max-width:730px;color:var(--muted);margin:0 auto 20px}
+.stage{height:430px;position:relative;display:grid;place-items:center;overflow:hidden;perspective:1050px;border:1px solid #325374;border-radius:26px;background:radial-gradient(ellipse at center 66%,#664029 0%,#1b3655 38%,#0b1b32 75%)}
+.stage:after{content:'';position:absolute;bottom:45px;width:250px;height:30px;border-radius:50%;background:radial-gradient(ellipse,#ffbd7052,transparent 75%);filter:blur(10px)}
+.lamp{position:relative;width:192px;height:260px;transform-style:preserve-3d;animation:spin 16s linear infinite;margin-top:-17px;z-index:2}
+.stage:hover .lamp,.lamp.paused{animation-play-state:paused}
+@keyframes spin{to{transform:rotateY(360deg)}}
+.face{position:absolute;inset:0;border:6px solid #b42335;background:radial-gradient(circle at 42% 46%,#fff5c3,#f5b95b 64%,#dc6440 100%);box-shadow:inset 0 0 30px #9d281b77,0 0 16px #ffce7233;transform:rotateY(calc(var(--i)*60deg)) translateZ(166px);display:flex;align-items:center;justify-content:center;flex-direction:column;backface-visibility:visible}
+.face:before,.face:after{content:'✦';position:absolute;left:9px;top:8px;color:#a32f2b}.face:after{left:auto;top:auto;right:9px;bottom:8px}
+.face .drawing{font-size:76px;line-height:1;text-shadow:0 7px 13px #bf5a3977}
+.face b{font-size:17px;color:#742429;margin-top:13px}
+.control-row{margin:22px 0;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.info{background:#ffffff10;border:1px solid #ffffff25;border-radius:15px;padding:15px 22px;color:#dbe6f8;text-align:left;margin:20px auto;max-width:730px}
+.info p{margin:0 0 6px}.info p:last-child{margin-bottom:0}
+@media(max-width:550px){.stage{height:360px}.lamp{width:132px;height:195px}.face{transform:rotateY(calc(var(--i)*60deg)) translateZ(114px);border-width:5px}.face .drawing{font-size:51px}.face b{font-size:12px}.lamp-page{padding:0 12px}}
+@media(prefers-reduced-motion:reduce){.lamp{animation-play-state:paused}}
+</style></head>
+<body>
+<a class="exam-back" href="index.html">← Quay về trang chính của đề thi kết thúc học phần</a>
+<header class="site-header"><div class="container header-inner"><a class="brand" href="baitap23.html">✦ BÀI TẬP 23</a><nav class="site-nav" aria-label="Điều hướng chính"><a href="baitap23.html">Trang chủ Bài 23</a><a href="baitap22.html">Bài tập 22</a><a href="den-keo-quan.html" class="active">Đèn kéo quân</a></nav></div></header>
+<main class="lamp-page">
+<p class="eyebrow">BÀI TẬP 23 · HIỆU ỨNG CSS VÀ JAVASCRIPT</p>
+<h1>Đèn kéo quân <span class="accent">xoay 3D</span></h1>
+<p class="lead">Đèn kéo quân 3D có 6 mặt trang trí bằng CSS và biểu tượng, không cần file ảnh. Di chuột vào đèn để tạm dừng, di chuột ra để quay tiếp.</p>
+<div class="stage" aria-label="Mô phỏng đèn kéo quân xoay 3 chiều" id="stage">
+ <div class="lamp" id="lamp">
+  <div class="face" style="--i:0"><span class="drawing">🐉</span><b>Rồng</b></div>
+  <div class="face" style="--i:1"><span class="drawing">🏮</span><b>Đèn lồng</b></div>
+  <div class="face" style="--i:2"><span class="drawing">🌸</span><b>Hoa</b></div>
+  <div class="face" style="--i:3"><span class="drawing">🌕</span><b>Trăng</b></div>
+  <div class="face" style="--i:4"><span class="drawing">🦋</span><b>Bướm</b></div>
+  <div class="face" style="--i:5"><span class="drawing">🐎</span><b>Ngựa</b></div>
+ </div>
+</div>
+<div class="control-row"><button class="btn btn-primary" id="toggle" type="button" aria-pressed="false">Tạm dừng</button><a href="baitap23.html" class="btn btn-secondary">← Về Bài tập 23</a></div>
+<div class="info"><p><strong>Giải thích:</strong> Mỗi mặt đèn dùng <code>rotateY()</code> và <code>translateZ()</code> để tạo mô hình lục giác 3D. <code>@keyframes</code> giúp xoay tự động.</p><p>JavaScript đổi trạng thái tạm dừng/tiếp tục khi nhấn nút; CSS dừng chuyển động khi di chuột qua đèn. Hiệu ứng hoạt động độc lập, không cần tải ảnh bên ngoài.</p></div>
+</main>
+<footer class="site-footer container">Bài tập 23 · Nguyễn Quốc Huy Hoàng · MSSV: 231A290170</footer>
+<script>
+const lamp=document.getElementById('lamp');
+const btn=document.getElementById('toggle');
+btn.addEventListener('click',()=>{
+  const paused=lamp.classList.toggle('paused');
+  btn.textContent=paused?'Tiếp tục xoay':'Tạm dừng';
+  btn.setAttribute('aria-pressed',String(paused));
+});
+</script>
+</body></html>
